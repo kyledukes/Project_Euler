@@ -30,16 +30,16 @@ number = 12
 abundants = []
 
 while number < 28123:
-    sum = 0
     half = number / 2
+    divisors_sum = 0
     for n in xrange(2, half + 1):
         if number % n == 0:
-            sum += n
-    if sum > number:
+            divisors_sum += n
+    if divisors_sum > number:
         abundants.append(number)
     number += 1
 
-abundants_sum = 0
+non_abundant_sum = 0
 n = 0
 
 while n < 28123:
@@ -47,10 +47,9 @@ while n < 28123:
     for abun in abundants:
         diff = n - abun
         if diff in abundants:
-            abundants_sum += n
             break
     else:
-        abundants_sum += n
+        non_abundant_sum += n
 
 stop_timer = time.time() - start_timer
 print "Answer: " + str(abundants_sum)
