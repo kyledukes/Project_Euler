@@ -52,7 +52,7 @@ while n < 28123:
         non_abundant_sum += n
 
 stop_timer = time.time() - start_timer
-print "Answer: " + str(abundants_sum)
+print "Answer: " + str(non_abundant_sum)
 print "Seconds: " + str(stop_timer)
 
 
