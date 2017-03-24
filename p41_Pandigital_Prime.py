@@ -13,12 +13,13 @@
 import time
 start_timer = time.time()
 
-num = 987654321
+num = 987654323
 
 ground_truth = ['9','8','7','6','5','4','3','2','1']
 
 
 while True:
+    n -= 2
     digits_list = list(str(num))
     if '0' in digits_list:
         continue
@@ -32,7 +33,6 @@ while True:
             break
     else:
         break
-    num -= 2
         
 stop_timer = time.time() - start_timer
 print "Answer: " + str(num)
