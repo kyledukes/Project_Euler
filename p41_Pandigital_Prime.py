@@ -19,6 +19,8 @@ ground_truth = ['9','8','7','6','5','4','3','2','1']
 while True:
     n -= 2
     digits_list = list(str(num))
+    if '0' in digits_list:
+        continue
     ground_truth_digits = ground_truth[-len(digits_list):]
     digits_list.sort()
     digits_list.reverse()
