@@ -9,26 +9,22 @@
     What is the largest n-digit pandigital prime that exists?
 
 """
-
+import math
 import time
 start_timer = time.time()
 
 num = 987654323
-
 ground_truth = ['9','8','7','6','5','4','3','2','1']
-
 
 while True:
     n -= 2
     digits_list = list(str(num))
-    if '0' in digits_list:
-        continue
     ground_truth_digits = ground_truth[-len(digits_list):]
     digits_list.sort()
     digits_list.reverse()
     if digits_list != ground_truth_digits:
         continue
-    for n in xrange(2, num/2):
+    for n in xrange(3, int(math.sqrt(num)) + 1, 2):
         if num % n == 0:
             break
     else:
