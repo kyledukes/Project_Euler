@@ -27,7 +27,7 @@ import time
 start_timer = time.time()
 
 number = 12
-abundants = []
+abundants = set()
 
 while number < 28123:
     half = number / 2
@@ -36,7 +36,7 @@ while number < 28123:
         if number % n == 0:
             divisors_sum += n
     if divisors_sum > number:
-        abundants.append(number)
+        abundants.add(number)
     number += 1
 
 non_abundant_sum = 0
