@@ -29,12 +29,12 @@ while len(answer) == 0:
         i2 = i * 2
         mid_num = big_num - i
         min_num = big_num - i2
-        nums = [big_num, mid_num, min_num]
         if min_num > 1000:
             big_digits = sorted(str(big_num))
             mid_digits = sorted(str(mid_num))
             min_digits = sorted(str(min_num))
             if big_digits == mid_digits == min_digits:
+                nums = [big_num, mid_num, min_num]
                 for n in nums:
                     half = n / 2
                     not_prime = 0
