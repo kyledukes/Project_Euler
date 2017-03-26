@@ -18,10 +18,18 @@ num = 987654323
 
 while True:
     n -= 2
-    if '0' in str(num):
+    num_str == str(num)
+    if '0' in num_str or \
+            '1' not in num_str or \
+            '2' not in num_str or \
+            '3' not in num_str or \
+            '4' not in num_str or \
+            '5' not in num_str or \
+            '6' not in num_str or \
+            '7' not in num_str:
         continue
-    digits_list = list(str(num))
-    digits_set = set(str(num))
+    digits_list = list(num_str)
+    digits_set = set(num_str)
     if len(digits_set) != len(digits_list):
         continue
     ground_truth_digits = [str(i) for i in xrange(1, len(digits_list) + 1)]
