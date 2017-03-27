@@ -17,7 +17,7 @@ start_timer = time.time()
 num = 987654323
 
 while True:
-    n -= 2
+    num -= 2
     num_str == str(num)
     if '0' in num_str:
         continue
