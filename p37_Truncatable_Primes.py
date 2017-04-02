@@ -28,8 +28,8 @@ def prime(number):
 # starting from the smallest truncatable prime
 num = 23
 
-allowed_first_digits = {2,3,5,7}
-allowed_last_digits = {3,7}
+allowed_first_digits = {2, 3, 5, 7}
+allowed_last_digits = {3, 7}
 
 amount_of_trunc_primes = 0
 truncatable_primes_sum = 0
