@@ -19,7 +19,7 @@
 import time
 start_timer = time.time()
 
-big_num = 9999
+max_num = 9999
 answer = ""
 
 while len(answer) == 0:
@@ -27,14 +27,14 @@ while len(answer) == 0:
     while True:
         i += 1
         i2 = i * 2
-        mid_num = big_num - i
-        min_num = big_num - i2
+        med_num = max_num - i
+        min_num = max_num - i2
         if min_num > 1000:
-            big_digits = sorted(str(big_num))
-            mid_digits = sorted(str(mid_num))
+            max_digits = sorted(str(max_num))
+            med_digits = sorted(str(med_num))
             min_digits = sorted(str(min_num))
-            if big_digits == mid_digits == min_digits:
-                nums = [big_num, mid_num, min_num]
+            if max_digits == med_digits == min_digits:
+                nums = [max_num, med_num, min_num]
                 for n in nums:
                     half = n / 2
                     not_prime = 0
@@ -47,10 +47,10 @@ while len(answer) == 0:
                     if not_prime > 0:
                         break
                 else:
-                    answer += str(min_num) + str(mid_num) + str(big_num)
+                    answer += str(min_num) + str(med_num) + str(max_num)
         else:
             break
-    big_num -= 2
+    max_num -= 2
 
 stop_timer = time.time() - start_timer
 print "Answer: " + answer
