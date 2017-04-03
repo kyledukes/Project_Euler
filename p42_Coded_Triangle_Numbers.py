@@ -25,13 +25,13 @@ f = open("p42_words.txt", "r")
 words_string = f.read()
 f.close()
 
-upper_letters = string.uppercase
-lower_letters = string.lowercase
+upper_alphabet = string.uppercase
+lower_alphabet = string.lowercase
 letter_scores = {}
 
-for letter in zip(upper_letters, lower_letters):
-    letter_scores[letter[0]] = upper_letters.index(letter[0]) + 1
-    letter_scores[letter[1]] = lower_letters.index(letter[1]) + 1
+for letter in zip(upper_alphabet, lower_alphabet):
+    letter_scores[letter[0]] = upper_alphabet.index(letter[0]) + 1
+    letter_scores[letter[1]] = lower_alphabet.index(letter[1]) + 1
 
 triangle_numbers = set()
 num = 0
