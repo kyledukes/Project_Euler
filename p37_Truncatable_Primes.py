@@ -36,17 +36,17 @@ truncatable_primes_sum = 0
 
 while amount_of_trunc_primes < 11:
     num_str = str(num)
-    len_num = len(num_str)
     first_digit = int(num_str[0])
     last_digit = int(num_str[-1])
     if first_digit in allowed_first_digits and last_digit in allowed_last_digits:
-        for i in xrange(len_num - 1):
-            truncate_left_to_right = int(num_str[i:len_num])
+        num_length = len(num_str)
+        for i in xrange(num_length - 1):
+            truncate_left_to_right = int(num_str[i:num_length])
             if not prime(truncate_left_to_right):
                 break
         else:
-            for i in xrange(len_num - 1):
-                truncate_right_to_left = int(num_str[0:len_num - i])
+            for i in xrange(num_length - 1):
+                truncate_right_to_left = int(num_str[0:num_length - i])
                 if not prime(truncate_right_to_left):
                     break
             else:
