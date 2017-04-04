@@ -46,10 +46,10 @@ total = 0
 
 for w in words_list:
     word = w.strip('"')
-    score = 0
+    word_score = 0
     for letter in word:
-        score += letter_scores[letter]
-    if score in triangle_numbers:
+        word_score += letter_scores[letter]
+    if word_score in triangle_numbers:
         total += 1
 
 stop_timer = time.time() - start_timer
