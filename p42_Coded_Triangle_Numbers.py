@@ -42,7 +42,7 @@ while len(triangle_numbers) < 18:
     triangle_numbers.add(triangle_number)
 
 words_list = words_string.split(",")
-total = 0
+triangle_words = []
 
 for w in words_list:
     word = w.strip('"')
@@ -50,10 +50,10 @@ for w in words_list:
     for letter in word:
         word_score += letter_scores[letter]
     if word_score in triangle_numbers:
-        total += 1
+        triangle_words.append(word)
 
 stop_timer = time.time() - start_timer
-print "Answer: " + str(total)
+print "Answer: " + str(len(triangle_words))
 print "Seconds: " + str(stop_timer)
 
 
