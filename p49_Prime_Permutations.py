@@ -22,7 +22,7 @@ start_timer = time.time()
 max_num = 9999
 answer = ""
 
-while len(answer) == 0:
+while not bool(answer):
     i = 0
     while True:
         i += 1
