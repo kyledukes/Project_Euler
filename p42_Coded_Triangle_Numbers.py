@@ -45,8 +45,8 @@ words_list = words_string.split(",")
 total = 0
 
 for w in words_list:
-    score = 0
     word = w.strip('"')
+    score = 0
     for letter in word:
         score += letter_scores[letter]
     if score in triangle_numbers:
