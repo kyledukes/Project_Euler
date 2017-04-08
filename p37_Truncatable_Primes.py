@@ -41,18 +41,18 @@ while amount_of_trunc_primes < 11:
     if first_digit in allowed_first_digits and last_digit in allowed_last_digits:
         num_length = len(num_str)
         for i in xrange(num_length - 1):
-            truncate_left_to_right = int(num_str[i:num_length])
-            if not prime(truncate_left_to_right):
+            trunc_left_to_right = int(num_str[i:num_length])
+            if not prime(trunc_left_to_right):
                 break
         else:
             for i in xrange(num_length - 1):
-                truncate_right_to_left = int(num_str[0:num_length - i])
-                if not prime(truncate_right_to_left):
+                trunc_right_to_left = int(num_str[0:num_length - i])
+                if not prime(trunc_right_to_left):
                     break
             else:
                 truncatable_primes_sum += num
                 amount_of_trunc_primes += 1
-    num += 1
+    num += 2
 
 stop_timer = time.time() - start_timer
 print "Answer: " + str(truncatable_primes_sum)
