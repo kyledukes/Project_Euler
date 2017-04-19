@@ -29,9 +29,9 @@ upper_alphabet = string.uppercase
 lower_alphabet = string.lowercase
 letter_scores = {}
 
-for letter in zip(upper_alphabet, lower_alphabet):
-    letter_scores[letter[0]] = upper_alphabet.index(letter[0]) + 1
-    letter_scores[letter[1]] = lower_alphabet.index(letter[1]) + 1
+for upper_letter, lower_letter in zip(upper_alphabet, lower_alphabet):
+    letter_scores[upper_letter] = upper_alphabet.index(upper_letter) + 1
+    letter_scores[lower_letter] = lower_alphabet.index(lower_letter) + 1
 
 triangle_numbers = set()
 num = 0
