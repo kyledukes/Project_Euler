@@ -11,10 +11,9 @@ of its digits which are also cube.
 Find the smallest cube for which exactly five permutations of its digits are cube.
 """
 
-def count_permutations(cube_sort, cube, counts):
+def collect_permutations(cube_sort, cube, counts):
     if cube_sort in set(counts.keys()):
         counts[cube_sort].append(cube)
-        return len(counts[cube_sort])
     else:
         counts[cube_sort] = [cube]
         
@@ -29,11 +28,12 @@ def find_smallest_cube(amount_of_permutations):
         cube_sort = "".join(sorted(cube_s))
         if len(cube_sort) in set(lens_sorts.keys()):
             if cube_sort in set(lens_sorts[len(cube_sort)]):
-                if count_permutations(cube_sort, cube, counts) == amount_of_permutations:
+                collect_permutations(cube_sort, cube, counts)
+                if len(counts[cube_sort]) == amount_of_permutations:
                     return counts[cube_sort][0]
             else:
                 lens_sorts[len(cube_sort)].append(cube_sort)
-                count_permutations(cube_sort, cube, counts)
+                collect_permutations(cube_sort, cube, counts)
         else:
             lens_sorts[len(cube_sort)] = [cube_sort]
             
