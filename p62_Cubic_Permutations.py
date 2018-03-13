@@ -20,7 +20,9 @@ def find_smallest_cube(amount_of_permutations):
         n += 1
         cube = n ** 3
         cube_sort = "".join(sorted(str(cube)))
-        if len(cube_sort) in set(lens_sorts.keys()):
+        if len(cube_sort) not in set(lens_sorts.keys()):
+            lens_sorts[len(cube_sort)] = [cube_sort]
+        else:
             if cube_sort in set(counts.keys()):
                 counts[cube_sort].append(cube)
             else:
@@ -30,7 +32,5 @@ def find_smallest_cube(amount_of_permutations):
                     return counts[cube_sort][0]
             else:
                 lens_sorts[len(cube_sort)].append(cube_sort)
-        else:
-            lens_sorts[len(cube_sort)] = [cube_sort]
 
 print(find_smallest_cube(5)) 
