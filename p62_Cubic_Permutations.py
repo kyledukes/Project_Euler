@@ -27,10 +27,9 @@ def find_smallest_cube(amount_of_permutations):
                 counts[cube_sort].append(cube)
             else:
                 counts[cube_sort] = [cube]
-            if cube_sort in set(lens_sorts[len(cube_sort)]):
-                if len(counts[cube_sort]) == amount_of_permutations:
-                    return counts[cube_sort][0]
-            else:
+            if cube_sort not in set(lens_sorts[len(cube_sort)]):
                 lens_sorts[len(cube_sort)].append(cube_sort)
+            elif len(counts[cube_sort]) == amount_of_permutations:
+                return counts[cube_sort][0]
 
-print(find_smallest_cube(5)) 
+print(find_smallest_cube(5))
