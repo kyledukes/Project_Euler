@@ -28,8 +28,8 @@ def permutations(s):
             for p in permutations(s[:i] + s[i+1:]):
                 yield s[i] + p
                 
-def printPrimePermutation(d):          
-    for i in permutations(d):
+def printPrimePermutation(num_str):          
+    for i in permutations(num_str):
         if i[-1] in set(['3', '7', '1']):
             if isPrime(int(i)):
                 print(i)
